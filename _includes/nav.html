@@ -1,0 +1,10 @@
+      <nav class="dt w-100 mw8 center">
+        <div class="dtc v-mid pa3">
+          <h1 class="white">{{ site.title }}</h1>
+        </div>
+        <div class="dtc v-mid tr pa3">
+          {% for item in site.navigation %}
+            <a class="f6 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="{{ item.url }}">{{ item.label }}</a>
+          {% endfor %}
+        </div>
+      </nav>
