@@ -1,16 +1,20 @@
 ---
 layout: default
 ---
-{% include header.html %}
 
 {% include hero.html %}
 
-<section class="mw5 mw7-ns center bg-light-gray pa3 ph5-ns">
-  <h1 class="mt0">Centered Container</h1>
-  <p class="lh-copy measure">
-    Combine width or max-width values with the center class to create a centered
-    container for your content.
-  </p>
-</section>
+<div class="pa4-l">
+  <form class="bg-moon-gray mw7 center pa4 br2-ns ba b--black-10">
+    <fieldset class="cf bn ma0 pa0">
+      <div class="cf">
+        <input class="f6 f5-l input-reset bn fl black-80 bg-white pa3 lh-solid w-100 w-75-m w-80-l br2-ns br--left-ns" placeholder="Search by keyword" type="text" name="search-input" value="" id="search">
+        <input class="f6 f5-l button-reset fl pv3 tc bn bg-animate bg-black-70 hover-bg-black white pointer w-100 w-25-m w-20-l br2-ns br--right-ns" type="submit" value="Search">
+      </div>
+    </fieldset>
+  </form>
+</div>
 
-{% include footer.html %}
+<section class="mw5 mw7-ns center bg-light-gray pa3 ph5-ns mb4">
+  {{ content }}
+</section>
