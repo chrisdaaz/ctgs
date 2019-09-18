@@ -5,3 +5,19 @@ title: "Critical Theory in the Global South" # the name of your site, e.g. ACME 
 navigation:
   - label: About
     url: /about/
+  - label: Resources
+    url: /resources/
+
+collections:
+  resources:
+    output: true
+    layout: item
+    permalink: /:collection/:title/
+
+
+defaults:
+  - scope:
+      path: ""
+      type: "resources"
+    values:
+      layout: "item"

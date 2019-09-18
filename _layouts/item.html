@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ "/assets/css/tachyons.min.css" | relative_url }}">
+  </head>
+  <body class="w-100 sans-serif">
+
+    {% include header.html %}
+
+    <article class="cf ph3 ph5-ns pv5">
+      <header class="fn fl-ns w-50-ns pr4-ns">
+        <h1 class="f2 lh-title fw9 mb3 mt0 pt3 bt bw2">
+          {{ page.title }}
+        </h1>
+        <h2 class="f3 mid-gray lh-title">
+          by {{ page.author }}
+        </h2>
+        <time class="f6 ttu tracked gray">{{ page.year }}</time>
+        <dl class="lh-title pv4 mt0">
+          <dt class="f6 b">Region</dt>
+          <dd class="ml0 mb2">{{ page.region }}</dd>
+          <dt class="f6 b">Subject</dt>
+          <dd class="ml0 mb2">{{ page.subject }}</dd>
+          <dt class="f6 b">DOI</dt>
+          <dd class="ml0 mb2">https://doi.org/10.12234.xx23d</dd>
+        </dl>
+      </header>
+      <div class="fn fl-ns w-50-ns">
+        <p class="f5 lh-copy measure mt0-ns">
+          {{ page.description }}
+        </p>
+        <a class="f6 no-underline grow dib v-mid black ba b--black ph3 pv2 mb3" href="#">Download</a>
+      </div>
+    </article>
+
+    {% include footer.html %}
+
+  </body>
+</html>

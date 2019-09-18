@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ "/assets/css/tachyons.min.css" | relative_url }}">
+  </head>
+  <body class="w-100 sans-serif">
+
+    {% include header.html %}
+
+    <section class="mw7 center">
+      <h2 class="f2">{{ page.title }}</h2>
+
+      <h3>Syllabi</h3>
+
+        {% assign syllabi = site.resources | where:"type","syllabus" %}
+        {% for item in syllabi %}
+        <article class="bt bb b--black-10">
+          <a class="db pv4 ph3 ph0-l no-underline black dim" href="{{ item.url }}">
+            <div class="flex flex-column flex-row-ns">
+              <div class="pr3-ns mb4 mb0-ns w-20-ns">
+                <img src="https://img.icons8.com/dotty/80/000000/syllabus.png" class="db" alt="{{ item.title }}">
+              </div>
+              <div class="w-100 pl3-ns">
+                <h3 class="f3 fw1 mt0 lh-title">{{ item.title }}</h3>
+                <p class="f6 f5-l lh-copy">
+                  {{ item.description }}
+                </p>
+                <p class="f6 lh-copy mv0">By {{ item.author}}</p>
+              </div>
+            </div>
+          </a>
+        </article>
+        {% endfor %}
+
+        <h3>Bibliographies</h3>
+
+          {% assign bibliographies = site.resources | where:"type","bibliography" %}
+          {% for item in bibliographies %}
+          <article class="bt bb b--black-10">
+            <a class="db pv4 ph3 ph0-l no-underline black dim" href="{{ item.url }}">
+              <div class="flex flex-column flex-row-ns">
+                <div class="pr3-ns mb4 mb0-ns w-20-ns">
+                  <img src="https://img.icons8.com/ios/50/000000/summary-list.png" class="db" alt="{{ item.title }}">
+                </div>
+                <div class="w-100 pl3-ns">
+                  <h3 class="f3 fw1 mt0 lh-title">{{ item.title }}</h3>
+                  <p class="f6 f5-l lh-copy">
+                    {{ item.description }}
+                  </p>
+                  {% if item.author %}
+                  <p class="f6 lh-copy mv0">By {{ item.author}}</p>
+                  {% endif %}
+                </div>
+              </div>
+            </a>
+          </article>
+          {% endfor %}
+
+          <h3>Articles</h3>
+
+            {% assign articles = site.resources | where:"type","article" %}
+            {% for item in articles %}
+            <article class="bt bb b--black-10">
+              <a class="db pv4 ph3 ph0-l no-underline black dim" href="{{ item.url }}">
+                <div class="flex flex-column flex-row-ns">
+                  <div class="pr3-ns mb4 mb0-ns w-20-ns">
+                    <img src="https://img.icons8.com/ios/50/000000/news.png" class="db" alt="{{ item.title }}">
+                  </div>
+                  <div class="w-100 pl3-ns">
+                    <h3 class="f3 fw1 mt0 lh-title">{{ item.title }}</h3>
+                    <p class="f6 f5-l lh-copy">
+                      {{ item.description }}
+                    </p>
+                    <p class="f6 lh-copy mv0">By {{ item.author}}</p>
+                  </div>
+                </div>
+              </a>
+            </article>
+            {% endfor %}
+
+    </section>
+
+    {{ content }}
+
+    {% include footer.html %}
+
+  </body>
+</html>
